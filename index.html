@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>Icebreaker</title>
+		
+		<!-- Setting the viewport is important so that mobile devices render the content at a viewable size -->
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+    
+        <!-- jQuery has some great frameworks, so we'll save ourselves some code -->
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+    
+        <script src="scripts.js"></script>
+
+
+
+	</head>
+	<body>
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+    
+    // Init the Facebook JS SDK
+    
+    (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+    }());
+    
+    window.fbAsyncInit = function() {
+        
+        FB.init({ 
+            appId: '315612685120198', 
+            status: true, 
+            cookie: true,
+            xfbml: true,
+            oauth: true
+        });
+        
+                //Get the users login status
+        FB.getLoginStatus(function(response) {
+            //If it is anything other than connected, render a login button
+            if (response.status != 'connected') {
+            
+                $("#user-info").html('<a href="#" id="login" data-role="button" data-theme="b">Login</a>').trigger('create');
+                $("#login").tap(function() {
+                    FB.login(function(response) { }, {scope:'user_likes'}); //Login the user and request permission to see their likes
+                });
+            }
+        });
+        
+        FB.Event.subscribe('auth.statusChange', handleStatusChange); // If their status changes, fire a function  
+
+	}
+    </script>
+    
+    <div data-theme="c" data-role="header">
+      <h1>Icebreaker</h1>
+    </div>
+    
+    <div id="user-info">
+      <img src="ajax-loader.gif" alt="loading..." class="center_this"/>
+    </div>
+    <div id="action_btns" class="ui-grid-a" >
+    </div>
+    <div class="like-holder">
+    </div>
+
+
+    <div class="footer" data-theme="c" data-role="footer" data-position="fixed">
+    <!-- Render a HTML5 Like Button -->
+        <div class="fb-like" data-href="http://icebreaker.fbdublin.com" data-send="false" data-width="320" data-show-faces="true"></div> 
+    </div>
+
+
+	</body>
+</html>
