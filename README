@@ -4,7 +4,7 @@ check out http://icebreaker.fbdublin.com/ to see it in action
 
 Relevant Documentation -
 
-[Facebook Developer Site](https://developers.facebook.com)
-[Feed Dialog](https://developers.facebook.com/docs/reference/dialogs/feed/)
-[Requests Dialog](https://developers.facebook.com/docs/reference/dialogs/requests/)
-[User object - /me endpoint](https://developers.facebook.com/docs/reference/api/user/)
+Facebook Developer Site -- https://developers.facebook.com
+Feed Dialog -- https://developers.facebook.com/docs/reference/dialogs/feed/
+Requests Dialog -- https://developers.facebook.com/docs/reference/dialogs/requests/
+User object - (/me endpoint in this sample) -- https://developers.facebook.com/docs/reference/api/user/
