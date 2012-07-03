@@ -50,7 +50,7 @@ function publishStory() {
         name: 'I\'m building a social mobile web app!',
         caption: 'This web app is going to be awesome.',
         description: 'Check out Facebook\'s developer site to start building.',
-        link: 'http://icebreaker.fb.com/index.html',
+        link: 'http://icebreaker.fbdublin.com/index.html',
         picture: 'http://www.colmisainmdom.com/img/headshot.jpg'
     },
     function(response) {
